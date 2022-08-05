@@ -33,10 +33,11 @@
 	</head>
 	<body>
 		<div class='container'>
-			<h1 align="center">European Imports & Exports of <br> Fish/Crustaceans Through 2000-2015</h1>
+			<h1 align="center">European Imports/Exports of <br> Fish/Crustaceans Through 2000-2015</h1>
 			<br>
+			<p>By <b>Takumi Li </b> (feiyang3@illinois.edu)</p>
 			<p>
-				Choose your desired country & commodity, then hit the "Render Visualization" button!
+				Choose the country & commodity to explore, and then hit the <b>"Render!"</b> button.
 				<br>
 			</p>
 			Country:
@@ -224,7 +225,7 @@
 						margin = {top: 40, right: 100, bottom: 30, left: 50},
 						width = +myViz.attr("width") - margin.left - margin.right,
 						height = +myViz.attr("height") - margin.top - margin.bottom;
-					
+
 					d3.select("#viz").append("div")
 							.attr("id", "tooltipBox")
 							.style("position", "absolute")
@@ -284,7 +285,7 @@
 								.attr("stroke", "blue")
 								.attr("d", line_imports);
 
-							// append the imports circle at the intersection 
+							// append the imports circle at the intersection
 							focus.append("circle")
 								.attr("class", "y")
 								.attr("id", "importsCircle")
@@ -323,7 +324,7 @@
 								.attr("stroke", "red")
 								.attr("d", line_exports);
 
-							// append the exports circle at the intersection 
+							// append the exports circle at the intersection
 							focus.append("circle")
 								.attr("class", "y")
 								.attr("id", "exportsCircle")
@@ -455,18 +456,18 @@
 							.attr("height", height)
 							.style("fill", "none")
 							.style("pointer-events", "all")
-							.on("mouseover", function() { 
+							.on("mouseover", function() {
 								focus.style("display", null);
 								tooltipLine.style("opacity", 1);
 								tooltipBox.style("display", "block");
 							})
-							.on("mouseout", function() { 
-								focus.style("display", "none"); 
+							.on("mouseout", function() {
+								focus.style("display", "none");
 								tooltipLine.style("opacity", 0);
 								tooltipBox.style("display", "none");
 							})
 							.on("mousemove", mousemove);
-						
+
 						function mousemove() {
 							var x0 = x.invert(d3.mouse(this)[0]),
 								i = bisectDate(data, x0, 1),
@@ -543,7 +544,7 @@
 					});
 				};
 			</script>
-			<button onClick='renderViz(document.getElementById("country_selected").value, document.getElementById("food_selected").value, true, true)'>Render Visualization</button>
+			<button onClick='renderViz(document.getElementById("country_selected").value, document.getElementById("food_selected").value, true, true)'>Render!</button>
 			<br>
 			<br>
 			<div class="row">
