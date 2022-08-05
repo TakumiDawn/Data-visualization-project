@@ -10,17 +10,18 @@
 	<body>
 		<div class='container'>
 			<h1>About The Visualization</h1>
+			<p>By Takumi Li (feiyang3@illinois.edu)
 			<p>
 				<h4><u>Context</u>:</h4>
 				<tab>The data I used for the final project came from Kaggle (<a href="https://www.kaggle.com/zhengtzer/global-fisheries-aquaculture-department" target="_blank">"Global Aquaculture Imports and Exports"</a>), but I specifically decided to use the European data ("Europe_Quantity.csv"). The data describes the quantity (in tons) of Imports/Exports of Fish/Crustacean commodities across 2000-2015. I decided to use only the European data because I saw that the other continents did not have a sufficient amount of data (unlike Europe). Prior to building the visualization, I had to perform a bit of preprocessing on the data (via Python script) in order to make it easier for D3 to plot it. For overall visual design, I decided to stick with Bootstrap throughout the entire website.
 
 				<br><br>
 				<h4><u>Hybrid Structure</u>:</h4>
-				<tab>Since I ended up having data for 42 countries, I figured that a Drill-Down Story would be the best hybrid structure that the narrative visualization should follow. When the user goes to the visualization page, he/she is prompted to select a specific country and commodity of his/her choice. These parameters are what control the state of the visualization overall. When that task is done, as soon as the "Render Visualization" button is pressed, the visualization/"main scene" gets rendered. By default, a dual line chart gets plotted (imports and exports). A legend also generates, showing what each glyph means in the visualization. From there, the user can freely explore the visualization. 
+				<tab>Since I ended up having data for 42 countries, I figured that a Drill-Down Story would be the best hybrid structure that the narrative visualization should follow. When the user goes to the visualization page, he/she is prompted to select a specific country and commodity of his/her choice. These parameters are what control the state of the visualization overall. When that task is done, as soon as the "Render Visualization" button is pressed, the visualization/"main scene" gets rendered. By default, a dual line chart gets plotted (imports and exports). A legend also generates, showing what each glyph means in the visualization. From there, the user can freely explore the visualization.
 
 				<br><br>
 				<h4><u>Triggers</u>:</h4>
-				<tab>If the user hovers the mouse over the left side of the legend section (specifically over "Imports"/"Exports"), then the text changes opacity and the mouse icon changes to a pointer. This is to indicate that the user can choose to filter out the visualization in order to only plot either imports or exports by clicking on the highlighted keyword. As soon as the user clicks on the keyword, the visualization renders again, and the keyword that the user did not click on disappears and the keyword that the user clicked on changes color, showing the user that a filter has been successfully done. As soon as the user clicks on the colored keyword, the visualization plots both imports and exports. 
+				<tab>If the user hovers the mouse over the left side of the legend section (specifically over "Imports"/"Exports"), then the text changes opacity and the mouse icon changes to a pointer. This is to indicate that the user can choose to filter out the visualization in order to only plot either imports or exports by clicking on the highlighted keyword. As soon as the user clicks on the keyword, the visualization renders again, and the keyword that the user did not click on disappears and the keyword that the user clicked on changes color, showing the user that a filter has been successfully done. As soon as the user clicks on the colored keyword, the visualization plots both imports and exports.
 
 				<br>
 
