@@ -16,20 +16,49 @@
 				<tab>The data I used for the final project came from Kaggle (<a href="https://www.kaggle.com/zhengtzer/global-fisheries-aquaculture-department" target="_blank">"Global Aquaculture Imports and Exports"</a>), but I specifically decided to use the European data ("Europe_Quantity.csv"). The data describes the quantity (in tons) of Imports/Exports of Fish/Crustacean commodities across 2000-2015. I decided to use only the European data because I saw that the other continents did not have a sufficient amount of data (unlike Europe). Prior to building the visualization, I had to perform a bit of preprocessing on the data (via Python script) in order to make it easier for D3 to plot it. For overall visual design, I decided to stick with Bootstrap throughout the entire website.
 
 				<br><br>
-				<h4><u>Hybrid Structure</u>:</h4>
-				<tab>Since I ended up having data for 42 countries, I figured that a Drill-Down Story would be the best hybrid structure that the narrative visualization should follow. When the user goes to the visualization page, he/she is prompted to select a specific country and commodity of his/her choice. These parameters are what control the state of the visualization overall. When that task is done, as soon as the "Render Visualization" button is pressed, the visualization/"main scene" gets rendered. By default, a dual line chart gets plotted (imports and exports). A legend also generates, showing what each glyph means in the visualization. From there, the user can freely explore the visualization.
+				<h4><u>Messaging</u>:</h4>
+				<h5>What is the message you are trying to communicate with the narrative visualization?</h5>
+				<tab>The main goal of this narrative visualization is to present the changes in the import/export quantity of aquaculture products in Europe by year. Users can also explore the differences in changes in different countries and different commodities (fish/crustaceans), by using the drop-down list and render button. Also, the visualization allows the user to find the max imposts/exports and max net gain/loss year for each country, and they could explore the data and conclude any result of their interests.
 
 				<br><br>
-				<h4><u>Triggers</u>:</h4>
-				<tab>If the user hovers the mouse over the left side of the legend section (specifically over "Imports"/"Exports"), then the text changes opacity and the mouse icon changes to a pointer. This is to indicate that the user can choose to filter out the visualization in order to only plot either imports or exports by clicking on the highlighted keyword. As soon as the user clicks on the keyword, the visualization renders again, and the keyword that the user did not click on disappears and the keyword that the user clicked on changes color, showing the user that a filter has been successfully done. As soon as the user clicks on the colored keyword, the visualization plots both imports and exports.
+				<h4><u>Narrative Structure</u>:</h4>
+				<h5>Which structure was your narrative visualization designed to follow (martini glass, interactive slide show, or drop-down story)? How does your narrative visualization follow that structure? (All of these structures can include the opportunity to "drill down" and explore. The difference is where that opportunity happens in the structure.)</h5>
+				<tab>Because this project ended up with data for 42 countries, I thought a Drill-Down Story would be the ideal narrative structure for the narrative visualization. When a user accesses the visualization page, he or she is invited to choose a certain country and commodity, which are the two parameters that control the state of the visualization. When that operation is completed, the visualization/"main scene" is produced as soon as the "Render!" button is pushed. A dual line chart is plotted by default (imports and exports). A legend is also created, which explains what each line/symbol in the visualization signifies. The user may then freely explore the visualization.
 
-				<br>
+				<br><br>
+				<h4><u>Visual Structure</u>:</h4>
+				<h5>What is the message you are trying to communicate with the narrative visualization?</h5>
+				<tab>Structure: As the basic visual structure for each scene (a combination of country and product), a line chart was developed, which was complemented by a legend, axis names, colors, and annotations. Viewers could quickly comprehend what they were looking at and tell the difference thanks to the legend and axis labels.
+				<tab>Highlighting: As part of the visual layout, there are two vertical lines of maximum net gain/loss to assist viewers move from scene to scene and year to year. Another line of the year will be highlighted (which changes with the mouse cursor) to show which year the viewers are looking at. Furthermore, imports are blue and exports are red, and users may choose to examine only one of them, allowing users to investigate them independently. Furthermore, the specific amount of imports and exports for a given year is supplied as "demand information" in a tooltip box.
+				<tab>Transition: The year of maximum imports/exports is highlighted by square dots for each scene, allowing visitors to compare various scenes. Furthermore, vertical lines represented years of maximum net gain/loss, allowing viewers to quickly see how the data moved from scene to scene.
 
-				<tab>If the user hovers the mouse over the visualization, a vertical tooltip line will appear over the nearest data value based off of the mouse position. Small circles also appear on the line chart(s), in order to convey a sense of location of the specific data value(s) to the user. In addition, a tooltip box will appear close to the mouse. This tooltip box shows relevant information for the user (such as the year, data value(s), and Net Gain/Loss). If both line charts are being plotted, then the tooltip will display either Net Gain/Loss (depending on whether there is a non-zero difference between the imports and exports data lines and if that difference is positive/negative). The information that the tooltip box shows is color coded also, in order to establish visual consistency. I chose to color code "Net Gain" as green, since I felt that was what people associate gains with, while I chose to color code "Net Loss" as violet for a similar reason.
+				<br><br>
+				<h4><u>Scenes</u>:</h4>
+				<h5>What are the scenes of your narrative visualization? How are the scenes ordered, and why?</h5>
+				<tab>Each country and commodity combination may be considered as a separate scene. As a result, the user has 42*2 = 48 scenes to investigate. They are simply rendered by the user himself/herself, and hence the order is determined by the user. Because I don't know what information the user would be interested in, a predetermined order of scenes would be less useful.
 
 				<br><br>
 				<h4><u>Annotations</u>:</h4>
-				<tab>Not only do the line chart(s) get plotted in the main scene, but also certain key glyphs/annotations get shown in the main scene as well. Maximum import and export glyphs are shown on each line chart(s) (as hollowed out red/blue squares), in order to serve as points of interest to the user. If both line charts are being plotted, then 2 vertical lines are also shown on the visualization. These lines indicate the maximum net gain and maximum net loss of the commodity and only appear if the net difference is non-zero. These vertical annotations also serve the same purpose as the maximum import/export glyphs: to serve as points of interest to the user. I chose these specific annotations to appear on the main scene because I felt that is what the user would be interested in knowing as he/she looks at the visualization.
+				<h5>What template was followed for the annotations, and why that template? How are the annotations used to support the messaging? Do the annotations change within a single scene, and if so, how and why.</h5>
+				<tab>Not only is the line chart plotted in the main scene, but some significant symbols/annotations are also presented there. Each line chart shows the maximum import and export (as red/blue squares) as information of interest for the user. If both line charts (imports and exports) are plotted, the visualization will also display two vertical lines. These lines show the maximum net gain and maximum net loss of the commodity and display only if the net difference is greater than zero.
+				<tab>These vertical annotations, like the maximum import/export symbols, have the same purpose: they serve as points of interest to the user. I picked these specific annotations to display on the main scene because I believed they would be of interest to the user when exploring the visualization.
+
+
+
+
+
+				<br><br>
+				<h4><u>Parameters</u>:</h4>
+				<h5>What are the parameters of the narrative visualization? What are the states of the narrative visualization? How are the parameters used to define the state and each scene?</h5>
+				<tab>When a user accesses the visualization page, he or she is invited to choose a certain country and commodity, which are the two parameters that govern the state of the visualization. These two parameters determine the relative data of the user's interests, and line charts are generated for the users. The user may also modify the scene's state by clicking on the top left corner and filtering only one imports/exports line chart.
+
+				<br><br>
+				<h4><u>Triggers</u>:</h4>
+				<h5>What are the triggers that connect user actions to changes of state in the narrative visualization? What affordances are provided to the user to communicate to them what options are available to them in the narrative visualization?</h5>
+				<tab>When the user hovers the mouse over the graphic, a vertical line based on the mouse location appears over the nearest year. Small circles appear on the line chart(s) to help the user understand the position of the specific data value(s). Furthermore, a tooltip box will show near the mouse. This tooltip box displays pertinent information (such as the year, data value(s), and Net Gain/Loss), giving the user with "information on demand." If both line charts are plotted, the tooltip will show Net Gain/Loss. To provide aesthetic consistency, the information displayed in the tooltip box is also color coded. “Net Gain" was coded as green because people associate gains with (as in stock markets), while "Net Loss" was coded as purple。
+				<tab>When the user hovers the mouse over the legend section's top left (over "Imports"/"Exports"), the text changes opacity and the mouse icon turns to a pointer. This is to illustrate that by clicking on the highlighted keyword, the user may narrow the visualization to just plot imports or exports. When the user clicks on the term, the visualization refreshes, and the keyword that the user did not click on vanishes, while the keyword that the user selected on changes color, indicating that the filter was successful. The visualization depicts both imports and exports as soon as the user clicks on the colored term.
+
+				<br><br>
 			</p>
 		</div>
 	</body>
